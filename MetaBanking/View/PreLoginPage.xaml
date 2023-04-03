@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MetaBanking.View.PreLoginPage"
+             Shell.NavBarIsVisible="False"
+             Title="Предавторизация">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#333">
+            <StackLayout Orientation="Vertical">
+                <Frame BackgroundColor="#00FF75">
+                    <Label FontSize="16" TextColor="#333" Margin="30, 0">MetaBanking</Label>
+                </Frame>
+                <Frame Margin="120, 60" 
+                       WidthRequest="120"
+                       HeightRequest="120"
+                       CornerRadius="40">
+                    <Image Source="user.png" Aspect="AspectFit" Margin="0"></Image>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Вход" 
+                        BackgroundColor="#00FF75" 
+                        TextColor="#333" 
+                        CornerRadius="10" 
+                        Margin="10, 320, 10, 0"
+                        WidthRequest="180"
+                        FontSize="13"
+                        FontFamily="Montserrat"
+                        Command="{Binding LoginCommand}"></Button>
+                <Button Text="Регистрация"
+                        BackgroundColor="#00FF75" 
+                        TextColor="#333" 
+                        CornerRadius="10" 
+                        Margin="0, 320, 0, 0"
+                        WidthRequest="180"
+                        FontSize="13"
+                        FontFamily="Montserrat"
+                        Command="{Binding RegisterCommand}"></Button>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

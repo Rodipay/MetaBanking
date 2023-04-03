@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MetaBanking.View.AddCardPage"
+             Title="Добавление карты">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="CardNumberEntry" Placeholder="Номер карты..." Margin="10" FontSize="18"></Entry>
+            <Button Text="Добавить" Margin="10" CornerRadius="10" FontSize="18" Clicked="OnEnterClicked"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

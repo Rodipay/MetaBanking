@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MetaBanking.View.LoginPage"
+             Title="MetaBanking">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#333">
+            <StackLayout Orientation="Vertical">
+                <Entry x:Name="LoginEntry" Placeholder="Введите логин" Margin="10, 240, 0, 0" 
+                       FontSize="18" TextColor="WhiteSmoke" PlaceholderColor="LightGray"></Entry>
+                <Entry x:Name="PasswordEntry" Placeholder="Введите пароль" Margin="10"
+                       FontSize="18" IsPassword="True" TextColor="WhiteSmoke" 
+                       PlaceholderColor="LightGray"></Entry>
+                <Button Text="Авторизоваться" Margin="10" CornerRadius="10" BackgroundColor="#00FF75" TextColor="#333"
+                        FontSize="18" Clicked="OnEnterClicked"></Button>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:MetaBanking.View"
+       Title="MetaBanking"
+       x:Class="MetaBanking.AppShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#00FF75" />
+                <Setter Property="Shell.ForegroundColor" Value="#333" />
+                <Setter Property="Shell.TitleColor" Value="#333" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#00FF75" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="#333"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#333"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#333"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#09BC6A" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#00FF75" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#09BC6A" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <!-- Предавторизация-->
+    <TabBar>
+        <ShellContent Route="PreLoginPage" ContentTemplate="{DataTemplate local:PreLoginPage}" />
+    </TabBar>
+
+    <!-- Регистрация -->
+    <TabBar>
+        <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate local:RegisterPage}"></ShellContent>
+    </TabBar>
+
+    <!-- Авторизация -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}"></ShellContent>
+    </TabBar>
+
+    <!-- Добавление карты -->
+    <TabBar>
+        <ShellContent Route="AddCardPage" ContentTemplate="{DataTemplate local:AddCardPage}"></ShellContent>
+    </TabBar>
+
+    <!-- Пополнение карты -->
+    <TabBar>
+        <ShellContent Route="FillUpCardPage" ContentTemplate="{DataTemplate local:FillUpCardPage}"></ShellContent>
+    </TabBar>
+
+    <!-- Нижняя панель -->
+    <FlyoutItem>
+        <ShellContent Route="HomePage" Title="Главная" Icon="icon_about.png" ContentTemplate="{DataTemplate local:HomePage}"></ShellContent>
+        <ShellContent Route="MorePage" Title="Ещё" Icon="icon_about.png" ContentTemplate="{DataTemplate local:MorePage}"></ShellContent>
+    </FlyoutItem>
+
+</Shell>

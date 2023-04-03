@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MetaBanking.View.FillUpCardPage"
+             Title="Пополнение карты">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="CardNumberEntry" Placeholder="(Необязательно) Номер карты..." Margin="10" FontSize="18"></Entry>
+            <Entry x:Name="AmountEntry" Placeholder="Сумма..." Margin="10" FontSize="18"></Entry>
+            <Button Text="Пополнить" Margin="10" CornerRadius="10" FontSize="18" Clicked="OnFillUpClicked"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

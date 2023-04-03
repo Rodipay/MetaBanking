@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xamarinForms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
+             xmlns:xamarinFormsPlatforms="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="MetaBanking.View.HomePage"
+             Title="Главная">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#343434">
+            <!--<StackLayout BackgroundColor="#555" HeightRequest="80" Margin="40, 20">
+                <Image Source="card" Margin="13, 13, 0, 13" HeightRequest="54" HorizontalOptions="Start"></Image>
+                <Label x:Name="LabelCurrectCardBalance" HorizontalOptions="Center" VerticalOptions="Start" FontSize="16"></Label>
+                <Label x:Name="LabelCurrectCard" HorizontalOptions="Start" VerticalOptions="End" Margin="10" HeightRequest="60" FontSize="16"></Label>
+                <Label x:Name="LabelCurrectCardDate" HorizontalOptions="Start" VerticalOptions="End" Margin="10" HeightRequest="40" FontSize="16"></Label>
+                <Label x:Name="LabelCurrectCardCode" HorizontalOptions="Start" VerticalOptions="End" Margin="10" HeightRequest="20" FontSize="16"></Label>
+            </StackLayout>-->
+            <!-- Карта -->
+            <Frame Margin="40, 20" CornerRadius="15" BackgroundColor="#565656">
+                <Grid Margin="-5, -8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="card"
+                           Grid.Row="0"
+                           Grid.RowSpan="4"
+                           Grid.Column="0" 
+                           WidthRequest="132"></Image>
+                    <StackLayout Grid.Column="1"
+                                 Grid.Row="0"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start">
+                        <Label x:Name="LabelCurrectCardBalance" 
+                               TextColor="LightGray"
+                               HorizontalOptions="Center" 
+                               FontSize="16"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1"
+                                 Grid.Row="1"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Start" 
+                                 VerticalOptions="End">
+                        <Label x:Name="LabelCurrectCard" 
+                               TextColor="LightGray"
+                               FontSize="12"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1"
+                                 Grid.Row="2"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Start" 
+                                 VerticalOptions="End">
+                        <Label x:Name="LabelCurrectCardDate" 
+                               TextColor="LightGray"
+                               FontSize="12"></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1"
+                                 Grid.Row="3"
+                                 Orientation="Horizontal"
+                                 HorizontalOptions="Start" 
+                                 VerticalOptions="End">
+                        <Label x:Name="LabelCurrectCardCode"
+                               TextColor="LightGray"
+                               FontSize="12"></Label>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Действия с картой -->
+            <!--<StackLayout Orientation="Horizontal">
+                <Button Text="Пополнить" CornerRadius="10" Margin="10" Clicked="OnFillUpCardClicked"></Button>
+                <Button Text="История" CornerRadius="10" Margin="10" Clicked="OnHistoryCardClicked"></Button>
+            </StackLayout>-->
+            <Frame Margin="40, 0, 40, 0" CornerRadius="15" BackgroundColor="#565656">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="Deposit.png" WidthRequest="18" HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <Label Text="Пополнить" FontSize="12" TextColor="LightGray" HorizontalOptions="Center" VerticalOptions="End"/>
+                    <Image Source="Withrow.png" WidthRequest="18" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start" />
+                    <Label Text="Перевести" Grid.Column="1" FontSize="12" TextColor="LightGray" HorizontalOptions="Center" VerticalOptions="End"/>
+                    <Image Source="Details.png" Grid.Column="2" WidthRequest="18" HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <Label Text="Детали" Grid.Column="2" FontSize="12" TextColor="LightGray" HorizontalOptions="Center" VerticalOptions="End"/>
+                    <Image Source="History.png" Grid.Column="3" WidthRequest="18" HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <Label Text="История" Grid.Column="3" FontSize="12" TextColor="LightGray" HorizontalOptions="Center" VerticalOptions="End"/>
+                </Grid>
+            </Frame>
+
+            <!-- Актуальный курс валют -->
+            <!--<Grid HorizontalOptions="Start" VerticalOptions="Start" Margin="10" Padding="40">
+                <Label x:Name="LabelDate" Text="Актуальный курс валют на ${date}" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="120" FontSize="18"></Label>
+                <Label Text="1 USD" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="60" FontSize="18"></Label>
+                <Label x:Name="LabelUSD" Text="${BYN} BYN" HorizontalOptions="End" VerticalOptions="End" HeightRequest="60" FontSize="18"></Label>
+                <Label Text="1 EUR" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="40" FontSize="18"></Label>
+                <Label x:Name="LabelEUR" Text="${BYN} BYN" HorizontalOptions="End" VerticalOptions="End" HeightRequest="40" FontSize="18"></Label>
+                <Label Text="100 RUB" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="20" FontSize="18"></Label>
+                <Label x:Name="LabelRUB" Text="${BYN} BYN" HorizontalOptions="End" VerticalOptions="End" HeightRequest="20" FontSize="18"></Label>
+
+            </Grid>-->
+            <Grid Margin="40, 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Курсы валют" HorizontalTextAlignment="Center">
+                    <Label.Effects>
+                        <xamarinForms:DropShadowEffect Color="Black" DistanceX="5" DistanceY="5" ShadowOpacity="0.5" />
+                    </Label.Effects>
+                </Label>
+                <Label Grid.Column="1" Text="Покупка" HorizontalTextAlignment="Center"/>
+                <Label Grid.Column="2" Text="Продажа" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="1" Text="USD" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="2" Text="EUR" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="3" Text="RUB" HorizontalTextAlignment="Center"/>
+                <Label x:Name="LabelUSD" Grid.Column="1" Grid.Row="1" Text="${BYN}" HorizontalTextAlignment="Center"/>
+                <Label x:Name="LabelEUR" Grid.Column="1" Grid.Row="2" Text="${BYN}" HorizontalTextAlignment="Center"/>
+                <Label x:Name="LabelRUB" Grid.Column="1" Grid.Row="3" Text="${BYN}" HorizontalTextAlignment="Center"/>
+                <Label x:Name="LabelUSDSell" Grid.Column="2" Grid.Row="1" Text="${BYN}" HorizontalTextAlignment="Center"/>
+                <Label x:Name="LabelEURSell" Grid.Column="2" Grid.Row="2" Text="${BYN}" HorizontalTextAlignment="Center"/>
+                <Label x:Name="LabelRUBSell" Grid.Column="2" Grid.Row="3" Text="${BYN}" HorizontalTextAlignment="Center"/>
+            </Grid>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

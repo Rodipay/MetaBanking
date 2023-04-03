@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MetaBanking.View.RegisterPage"
+             Title="Регистрация">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="LoginEntry" Placeholder="Логин..." Margin="10" FontSize="18"></Entry>
+            <Entry x:Name="PasswordEntry" Placeholder="Пароль..." Margin="10" FontSize="18" IsPassword="True"></Entry>
+            <Button Text="Перевести" Margin="10" CornerRadius="10" FontSize="18" Clicked="OnEnterClicked"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
